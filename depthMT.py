@@ -98,7 +98,7 @@ with open(argv[1],"r")as paths:
  dfheter=allHeter()
  dl.append(dfheter)
  #print(dl)
- df_final = reduce(lambda left,right: pd.merge(left,right,left_index=True,right_index=True), dl)
+ df_final = reduce(lambda left,right: pd.merge(left,right,left_index=True,right_index=True), dl)###merge all pd in list
  #print(df_final)
  df_final = df_final.sort_index(axis=1)
  df_final.to_csv("depthallfile.txt",sep="\t",index=True,float_format="%.4f")
